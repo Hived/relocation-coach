@@ -26,7 +26,44 @@ export function isMock() {
   return process.env.COACH_MOCK === "1";
 }
 
-async function runCli(system: string, prompt: string, model: string): Promise<string> {
+const NOT_FOUND_HINT =
+  "Install Claude Code (https://claude.com/claude-code), open a NEW terminal, run `claude` once to log in, then restart the app (close start.bat and open it again). " +
+  "If it is installed but still not found, paste its full path in Settings → Claude Code path (find it with `where claude` on Windows or `which claude` on macOS).";
+
+async function exists(p: string) {
+  try {
+    await fs.access(p);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Find the Claude Code executable: Settings path → CLAUDE_BIN → common install folders → PATH. */
+export async function findClaude(custom?: string): Promise<{ bin: string; source: string }> {
+  if (custom?.trim()) return { bin: custom.trim().replace(/^"|"$/g, ""), source: "settings" };
+  if (process.env.CLAUDE_BIN) return { bin: process.env.CLAUDE_BIN, source: "CLAUDE_BIN" };
+  const home = os.homedir();
+  const candidates =
+    process.platform === "win32"
+      ? [
+          path.join(home, ".local", "bin", "claude.exe"), // native installer
+          path.join(process.env.APPDATA ?? path.join(home, "AppData", "Roaming"), "npm", "claude.cmd"), // npm -g
+          path.join(process.env.LOCALAPPDATA ?? path.join(home, "AppData", "Local"), "Programs", "claude", "claude.exe"),
+        ]
+      : [
+          path.join(home, ".local", "bin", "claude"), // native installer
+          path.join(home, ".claude", "local", "claude"),
+          "/opt/homebrew/bin/claude",
+          "/usr/local/bin/claude",
+          path.join(home, ".npm-global", "bin", "claude"),
+          "/usr/bin/claude",
+        ];
+  for (const c of candidates) if (await exists(c)) return { bin: c, source: "auto-detected" };
+  return { bin: "claude", source: "PATH" };
+}
+
+async function runCli(system: string, prompt: string, model: string, customPath?: string): Promise<string> {
   const tmp = await fs.mkdtemp(path.join(os.tmpdir(), "coach-"));
   const sysFile = path.join(tmp, "system.txt");
   await fs.writeFile(sysFile, system, "utf8");
@@ -43,16 +80,18 @@ async function runCli(system: string, prompt: string, model: string): Promise<st
   ];
   if (model) args.push("--model", model);
 
-  const bin = process.env.CLAUDE_BIN || "claude";
+  const { bin } = await findClaude(customPath);
   const isWin = process.platform === "win32";
+  // .exe (or any binary on macOS/Linux) runs directly; claude.cmd / bare "claude" on Windows needs cmd.exe
+  const useShell = isWin && !bin.toLowerCase().endsWith(".exe");
 
   try {
     return await new Promise<string>((resolve, reject) => {
-      const child = spawn(isWin ? `"${bin}"` : bin, isWin ? args.map((a) => (a === "" ? '""' : `"${a}"`)) : args, {
-        shell: isWin, // claude.cmd on Windows needs a shell
-        cwd: tmp, // keep Claude away from the repo files
-        env: process.env,
-      });
+      const child = spawn(
+        useShell ? `"${bin}"` : bin,
+        useShell ? args.map((a) => (a === "" ? '""' : `"${a}"`)) : args,
+        { shell: useShell, cwd: tmp, env: process.env, windowsHide: true },
+      );
       let out = "";
       let err = "";
       const timer = setTimeout(() => {
@@ -63,15 +102,17 @@ async function runCli(system: string, prompt: string, model: string): Promise<st
       child.stderr.on("data", (d) => (err += d));
       child.on("error", (e: NodeJS.ErrnoException) => {
         clearTimeout(timer);
-        if (e.code === "ENOENT")
-          reject(new ClaudeError("Claude Code was not found on this PC.", "Install Claude Code and run `claude` once to log in."));
+        if (e.code === "ENOENT") reject(new ClaudeError(`Claude Code was not found on this PC (looked for: ${bin}).`, NOT_FOUND_HINT));
         else reject(new ClaudeError(e.message));
       });
       child.on("close", (code) => {
         clearTimeout(timer);
         if (code !== 0 && !out.trim()) {
           const msg = err.trim() || `claude exited with code ${code}`;
-          const hint = /log ?in|auth|credential/i.test(msg) ? "Open a terminal, run `claude`, and log in." : undefined;
+          // cmd.exe: "'claude' is not recognized as an internal or external command"
+          if (/not recognized|command not found|No such file/i.test(msg))
+            return reject(new ClaudeError(`Claude Code was not found on this PC (looked for: ${bin}).`, NOT_FOUND_HINT));
+          const hint = /log ?in|auth|credential|api key/i.test(msg) ? "Open a terminal, run `claude`, and log in." : undefined;
           reject(new ClaudeError(msg.slice(0, 500), hint));
         } else resolve(out);
       });
@@ -128,7 +169,7 @@ export function parseJsonLoose<T>(text: string): T {
 export async function askClaudeText(kind: string, system: string, prompt: string): Promise<string> {
   if (isMock()) return JSON.stringify(mockFor(kind, prompt));
   const settings = { ...DEFAULT_SETTINGS, ...(await readJson<Partial<Settings>>("settings", {})) };
-  const raw = await runCli(system, prompt, settings.model);
+  const raw = await runCli(system, prompt, settings.model, settings.claudePath);
   return extractResultText(raw);
 }
 

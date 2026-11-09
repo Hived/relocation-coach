@@ -24,7 +24,8 @@ function Toggle({ on, onChange, label, sub }: { on: boolean; onChange: (v: boole
 
 export default function SettingsPage() {
   const { settings, update } = useSettings();
-  const [ping, setPing] = useState<{ ok: boolean; message: string; mock: boolean; ms: number } | null>(null);
+  const [ping, setPing] = useState<{ ok: boolean; message: string; mock: boolean; ms: number; bin: string; source: string } | null>(null);
+  const [pathDraft, setPathDraft] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<unknown>(null);
 
@@ -56,16 +57,30 @@ export default function SettingsPage() {
               <option value="haiku">Haiku (fastest)</option>
             </select>
           </Field>
+          <Field label="Claude Code path (optional — leave empty to auto-detect)">
+            <input
+              className={clsx(inputCls, "w-96 max-w-full font-mono text-sm")}
+              placeholder="e.g. C:\\Users\\you\\.local\\bin\\claude.exe"
+              value={pathDraft ?? settings.claudePath}
+              onChange={(e) => setPathDraft(e.target.value)}
+              onBlur={() => {
+                if (pathDraft !== null) update({ claudePath: pathDraft.trim() });
+              }}
+            />
+          </Field>
           <Button onClick={test} loading={busy}>
             <Plug size={16} /> Test connection
           </Button>
         </div>
         {ping && (
-          <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-4 rounded-xl border border-good/40 bg-good/5 p-3 text-sm flex items-center gap-2">
+          <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-4 rounded-xl border border-good/40 bg-good/5 p-3 text-sm flex flex-wrap items-center gap-2">
             <CheckCircle2 className="text-good" size={18} />
             <span>{ping.message}</span>
             <Badge>{(ping.ms / 1000).toFixed(1)}s</Badge>
             {ping.mock && <Badge tone="warn">mock mode</Badge>}
+            <span className="text-xs text-muted font-mono">
+              {ping.bin} ({ping.source})
+            </span>
           </motion.div>
         )}
         <div className="mt-3">

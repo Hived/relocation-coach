@@ -55,6 +55,7 @@ export interface Progress {
 
 export interface Settings {
   model: string; // "" = Claude Code default; or "sonnet", "opus", "haiku", "fable"
+  claudePath: string; // optional full path to the claude executable
   showEn: boolean;
   showAr: boolean;
   showDarija: boolean;
@@ -63,6 +64,7 @@ export interface Settings {
 
 export const DEFAULT_SETTINGS: Settings = {
   model: "",
+  claudePath: "",
   showEn: true,
   showAr: true,
   showDarija: true,
