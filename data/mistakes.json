@@ -94,5 +94,337 @@
     "streakCorrect": 0,
     "status": "open",
     "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Hier, je ___ allé au bureau en tramway.",
+    "myAnswer": "ai",
+    "correction": "suis",
+    "rule": {
+      "en": "Correct answer: suis"
+    },
+    "id": "m_mw9jyqvho9qd",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Si j'avais plus de temps, je ___ le français tous les jours.",
+    "myAnswer": "pratiquerai",
+    "correction": "pratiquerais",
+    "rule": {
+      "en": "Correct answer: pratiquerais"
+    },
+    "id": "m_mw9jyqviag3i",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "grammar",
+    "question": "C'est le projet ___ je t'ai parlé la semaine dernière.",
+    "myAnswer": "que",
+    "correction": "dont",
+    "rule": {
+      "en": "Correct answer: dont"
+    },
+    "id": "m_mw9jyqvirc7d",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "grammar",
+    "question": "Bien qu'il ___ cinq ans d'expérience en .NET, il n'a pas été recruté.",
+    "myAnswer": "a",
+    "correction": "ait",
+    "rule": {
+      "en": "Correct answer: ait"
+    },
+    "id": "m_mw9jyqviwfgt",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "spelling",
+    "question": "Correct this: \"je m'appele\"",
+    "myAnswer": "je m'appele",
+    "correction": "je m'appelle",
+    "rule": {
+      "en": "'Appeler' doubles the L when a silent -e follows: je m'appelle, tu t'appelles, but nous nous appelons.",
+      "ar": "هذا الفعل يضاعف حرف اللام عندما يليه حرف صامت في آخر الكلمة، كما في ضمير المتكلم المفرد، ولا يضاعفه مع ضمير المتكلمين.",
+      "darija": "F 'appeler' kat-t'dobla l-L mli kat-ji mourah 'e' ma-katnetqch: je m'appelle, tu t'appelles, walakin nous nous appelons."
+    },
+    "id": "m_mw9jyqvi8aws",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "article",
+    "question": "Correct this: \"je suis un ingénieur\"",
+    "myAnswer": "je suis un ingénieur",
+    "correction": "je suis ingénieur",
+    "rule": {
+      "en": "After 'je suis', don't put an article before a job: je suis ingénieur, je suis développeur. With 'c'est' you need one: c'est un ingénieur.",
+      "ar": "بعد فعل الكينونة مع الضمير لا نضع أداة التنكير قبل اسم المهنة، أما مع اسم الإشارة فنضعها.",
+      "darija": "Mor 'je suis' ma-kan-7ettouch 'un/une' qbel l-mihna: je suis ingénieur. Ghir m3a 'c'est' kat-goul: c'est un ingénieur."
+    },
+    "id": "m_mw9jyqvi3hc4",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "spelling",
+    "question": "Correct this: \"ingenieur\"",
+    "myAnswer": "ingenieur",
+    "correction": "ingénieur",
+    "rule": {
+      "en": "Accents are part of the spelling, and leaving them out is a mistake. 'é' sounds like the 'ay' in 'say', but shorter.",
+      "ar": "علامات النطق جزء من الإملاء، وحذفها يعد خطأ، وهي تغير نطق الحرف.",
+      "darija": "Les accents juz2 mn l-ktaba, ila nsitihom ra ghalat. 'é' kat-tnteq bhal 'e' f 'bébé'."
+    },
+    "id": "m_mw9jyqvix1jj",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "preposition",
+    "question": "Correct this: \"ingénieur d'informatique\"",
+    "myAnswer": "ingénieur d'informatique",
+    "correction": "ingénieur en informatique",
+    "rule": {
+      "en": "To name your field, use 'en': ingénieur en informatique, master en informatique.",
+      "ar": "للتعبير عن مجال التخصص نستعمل حرف الجر الدال على الظرفية، لا حرف الإضافة.",
+      "darija": "Bach tgoul l-mjal dyalek, sta3mel 'en' machi 'de': ingénieur en informatique, master en informatique."
+    },
+    "id": "m_mw9jyqvip6hn",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "preposition",
+    "question": "Correct this: \"avec 5 ans experiences\"",
+    "myAnswer": "avec 5 ans experiences",
+    "correction": "avec 5 ans d'expérience",
+    "rule": {
+      "en": "A quantity before a noun needs 'de': 5 ans d'expérience. Here 'expérience' stays singular because it can't be counted.",
+      "ar": "بعد التعبير عن الكمية نحتاج إلى حرف الإضافة قبل الاسم، وهذا الاسم يبقى مفردا هنا لأنه غير معدود.",
+      "darija": "Mor chi kammiya khassek 'de': 5 ans d'expérience. W 'expérience' katbqa mufrad hna 7it ma-kat-t7sebch."
+    },
+    "id": "m_mw9jyqvi9ybz",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "agreement",
+    "question": "Correct this: \"plusieur projet / plusieur technologie\"",
+    "myAnswer": "plusieur projet / plusieur technologie",
+    "correction": "plusieurs projets / plusieurs technologies",
+    "rule": {
+      "en": "'Plusieurs' always ends in -s, and the noun after it is plural too: plusieurs projets, plusieurs technologies.",
+      "ar": "هذه الكلمة تدل دائما على الجمع فتنتهي دائما بعلامة الجمع، والاسم الذي بعدها يكون جمعا أيضا.",
+      "darija": "'Plusieurs' dima b 's', w l-ism li mourah 7ta howa jam3: plusieurs projets, plusieurs technologies."
+    },
+    "id": "m_mw9jyqvi7pjw",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "spelling",
+    "question": "Correct this: \"come\"",
+    "myAnswer": "come",
+    "correction": "comme",
+    "rule": {
+      "en": "'Comme' (like, such as) is spelled with two m's.",
+      "ar": "هذه الكلمة التي تعني مثل تكتب بميمين.",
+      "darija": "'Comme' (bhal) kat-tkteb b juj m."
+    },
+    "id": "m_mw9jyqvi3r99",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Correct this: \"si j'obtenir le poste\"",
+    "myAnswer": "si j'obtenir le poste",
+    "correction": "si j'obtiens le poste",
+    "rule": {
+      "en": "Never use the infinitive after 'je'. 'Si' + present tense, then the result in the future: si j'obtiens le poste, je ferai tout ce que je peux.",
+      "ar": "لا نستعمل المصدر بعد الضمير أبدا. بعد أداة الشرط نستعمل المضارع، ويأتي الجواب في المستقبل.",
+      "darija": "Ma-tkhallich l-verbe f l-infinitif mor 'je'. 'Si' + présent, w l-jawab f l-futur: si j'obtiens le poste, je ferai tout ce que je peux."
+    },
+    "id": "m_mw9jyqvibdg3",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "agreement",
+    "question": "Correct this: \"toute ce que je peux\"",
+    "myAnswer": "toute ce que je peux",
+    "correction": "tout ce que je peux",
+    "rule": {
+      "en": "'Tout ce que' (everything that) is a fixed expression. 'Tout' stays masculine singular here.",
+      "ar": "هذه عبارة ثابتة بمعنى كل ما، والكلمة الأولى فيها تبقى مذكرة مفردة.",
+      "darija": "'Tout ce que' (ga3 dakchi li) 3ibara tabta, 'tout' katbqa mudakkar mufrad, bla 'e'."
+    },
+    "id": "m_mw9jyqviyxti",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "spelling",
+    "question": "Correct this: \"un bon travaille\"",
+    "myAnswer": "un bon travaille",
+    "correction": "un bon travail",
+    "rule": {
+      "en": "'Travail' is the noun (work); 'travaille' is the verb (je travaille). After 'un bon' you need the noun.",
+      "ar": "يجب التمييز بين الاسم الذي يعني العمل والفعل المصرف مع ضمير المتكلم، فهما يختلفان في الكتابة رغم تقارب النطق. بعد أداة التنكير والصفة نحتاج إلى الاسم.",
+      "darija": "'Travail' = smiya (l-khedma), 'travaille' = fi3l (je travaille). Mor 'un bon' khassek s-smiya."
+    },
+    "id": "m_mw9jyqviwjx9",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "vocabulary",
+    "question": "Correct this: \"je veux déménager pour avoir un challenge dans la vie\"",
+    "myAnswer": "je veux déménager pour avoir un challenge dans la vie",
+    "correction": "je souhaite m'installer à l'étranger pour relever un nouveau défi professionnel",
+    "rule": {
+      "en": "Use formal French in a cover letter: 'je souhaite' instead of 'je veux', and 'relever un défi' instead of the English-style 'avoir un challenge'.",
+      "ar": "في رسالة التحفيز نستعمل لغة رسمية: فعل الرغبة المهذب بدل فعل الإرادة المباشر، وعبارة مواجهة التحدي بدل الكلمة المقترضة من الإنجليزية.",
+      "darija": "F lettre de motivation hder b l-loga rasmiya: 'je souhaite' blast 'je veux', w 'relever un défi' blast 'avoir un challenge' (hadi anglais)."
+    },
+    "id": "m_mw9jyqviy1v7",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "syntax",
+    "question": "Correct this: \"j'ai 29 ans je suis ingénieur\"",
+    "myAnswer": "j'ai 29 ans je suis ingénieur",
+    "correction": "J'ai 29 ans. Je suis ingénieur",
+    "rule": {
+      "en": "Separate ideas with a full stop or a comma, and start every sentence with a capital letter, especially in a formal letter.",
+      "ar": "افصل بين الأفكار بنقطة أو فاصلة، وابدأ كل جملة بحرف استهلالي كبير، خاصة في الرسائل الرسمية.",
+      "darija": "Fra9 bin l-afkar b point wla virgule, w bda kol jomla b 7arf kbir (majuscule), khsousan f lettre rasmiya."
+    },
+    "id": "m_mw9jyqvixivs",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Correct this: \"Hier, j'ai allé au bureau\"",
+    "myAnswer": "Hier, j'ai allé au bureau",
+    "correction": "Hier, je suis allé au bureau",
+    "rule": {
+      "en": "Movement verbs like aller, venir, partir and arriver take être in the passé composé: je suis allé(e), je suis arrivé(e).",
+      "ar": "أفعال الحركة مثل الذهاب والمجيء والمغادرة والوصول تصرف في الماضي المركب مع فعل الكينونة، لا مع فعل الملكية.",
+      "darija": "Les verbes dyal l-7araka (aller, venir, partir, arriver...) kay-ddiw 'être' f passé composé: je suis allé, machi j'ai allé."
+    },
+    "id": "m_mw9jyqviwyg8",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Correct this: \"Si j'avais plus de temps, je pratiquerai\"",
+    "myAnswer": "Si j'avais plus de temps, je pratiquerai",
+    "correction": "Si j'avais plus de temps, je pratiquerais",
+    "rule": {
+      "en": "'Si' + imparfait is followed by the conditional (-ais), not the future (-ai): si j'avais le temps, je pratiquerais.",
+      "ar": "عندما يكون فعل الشرط في الماضي الناقص، يأتي الجواب في صيغة الشرط التي تنتهي بحرف السين الصامت، لا في صيغة المستقبل.",
+      "darija": "Si + imparfait → conditionnel (-ais), machi futur (-ai): si j'avais le temps, je pratiquerais. F n-nutq qrab, walakin f l-ktaba kayban l-far9."
+    },
+    "id": "m_mw9jyqviwxcu",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "syntax",
+    "question": "Correct this: \"C'est le projet que je t'ai parlé\"",
+    "myAnswer": "C'est le projet que je t'ai parlé",
+    "correction": "C'est le projet dont je t'ai parlé",
+    "rule": {
+      "en": "Use 'dont' when the verb takes 'de': parler de quelque chose → le projet dont je t'ai parlé.",
+      "ar": "نستعمل ضمير الوصل الخاص الذي يعوض حرف الإضافة عندما يتطلب الفعل هذا الحرف، مثل فعل التحدث عن شيء.",
+      "darija": "Ila l-verbe kay-tlab 'de' (parler de), sta3mel 'dont' machi 'que': le projet dont je t'ai parlé."
+    },
+    "id": "m_mw9jyqvi33h5",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "area": "french",
+    "topic": "conjugation",
+    "question": "Correct this: \"Bien qu'il a cinq ans d'expérience\"",
+    "myAnswer": "Bien qu'il a cinq ans d'expérience",
+    "correction": "Bien qu'il ait cinq ans d'expérience",
+    "rule": {
+      "en": "'Bien que' (although) is always followed by the subjunctive: bien qu'il ait, bien qu'il soit.",
+      "ar": "أداة التنازل التي تعني رغم أن يليها دائما فعل في صيغة الالتزام.",
+      "darija": "'Bien que' (wakha) dima mourah subjonctif: bien qu'il ait, bien qu'il soit."
+    },
+    "id": "m_mw9jyqvirjsm",
+    "date": "2026-11-09",
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
   }
 ]
