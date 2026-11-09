@@ -1,0 +1,112 @@
+[
+  {
+    "id": "w1-sum-evens",
+    "week": 1,
+    "title": "Sum of even numbers",
+    "lessonId": "w1-control",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/SumOfEvens.cs",
+    "testFilter": "Week01.SumOfEvensTests",
+    "description": "Write `SumOfEvens.Calculate(int[] numbers)` that returns the **sum of the even numbers** in the array.\n\n- `[1, 2, 3, 4]` \u2192 `6`\n- `[]` \u2192 `0`\n- Negative even numbers count too: `[-2, 3]` \u2192 `-2`\n\nUse a `foreach` loop and the `%` operator. No LINQ for this one!"
+  },
+  {
+    "id": "w1-fizzbuzz",
+    "week": 1,
+    "title": "FizzBuzz",
+    "lessonId": "w1-control",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/FizzBuzz.cs",
+    "testFilter": "Week01.FizzBuzzTests",
+    "description": "Write `FizzBuzz.Generate(int n)` that returns a `List<string>` for numbers **1 to n**:\n\n- multiple of 3 \u2192 `\"Fizz\"`, multiple of 5 \u2192 `\"Buzz\"`, multiple of both \u2192 `\"FizzBuzz\"`\n- otherwise the number as text (`\"1\"`, `\"2\"`\u2026)\n\nIf `n <= 0`, return an empty list. Classic interview warm-up \u2014 write it without looking anything up."
+  },
+  {
+    "id": "w1-vat",
+    "week": 1,
+    "title": "Price with VAT (decimal)",
+    "lessonId": "w1-types",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/PriceCalculator.cs",
+    "testFilter": "Week01.PriceCalculatorTests",
+    "description": "Irish VAT is **23%**. Write `PriceCalculator.Total(decimal unitPrice, int quantity, decimal vatRate)` that returns the total **including VAT, rounded to 2 decimals** (use `Math.Round(value, 2, MidpointRounding.AwayFromZero)`).\n\n- `Total(10m, 3, 0.23m)` \u2192 `36.90m`\n- Throw `ArgumentOutOfRangeException` if `quantity < 0` or `unitPrice < 0`.\n\n\ud83d\udca1 Why `decimal` and not `double` for money? Think about it \u2014 it will be asked in the teach-back."
+  },
+  {
+    "id": "w1-minmax",
+    "week": 1,
+    "title": "Min and max (tuples)",
+    "lessonId": "w1-methods",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/MinMax.cs",
+    "testFilter": "Week01.MinMaxTests",
+    "description": "Write `MinMax.Find(int[] numbers)` that returns a **tuple** `(int Min, int Max)` in **one pass** over the array (one loop, no `Min()`/`Max()`/sorting).\n\n- `[3, 9, -2, 7]` \u2192 `(-2, 9)`\n- Throw `ArgumentException` if the array is empty, `ArgumentNullException` if it is null."
+  },
+  {
+    "id": "w1-reverse-words",
+    "week": 1,
+    "title": "Reverse words",
+    "lessonId": "w1-arrays-strings",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/ReverseWords.cs",
+    "testFilter": "Week01.ReverseWordsTests",
+    "description": "Write `ReverseWords.Reverse(string sentence)` that reverses the **order of the words**.\n\n- `\"hello world\"` \u2192 `\"world hello\"`\n- Extra spaces are removed: `\"  I   love .NET \"` \u2192 `\".NET love I\"`\n- Empty or whitespace-only \u2192 `\"\"`\n\nHint: `Split` with `StringSplitOptions.RemoveEmptyEntries`, then `string.Join`."
+  },
+  {
+    "id": "w1-palindrome",
+    "week": 1,
+    "title": "Valid palindrome",
+    "lessonId": "w1-arrays-strings",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week01/Palindrome.cs",
+    "testFilter": "Week01.PalindromeTests",
+    "description": "Write `Palindrome.IsPalindrome(string text)`: return `true` if the text reads the same forwards and backwards, **ignoring case and anything that is not a letter or digit**.\n\n- `\"A man, a plan, a canal: Panama\"` \u2192 `true`\n- `\"race a car\"` \u2192 `false`\n- `\"\"` \u2192 `true`\n\nTry the **two-pointer** technique (one index from the start, one from the end) instead of building a reversed string. `char.IsLetterOrDigit` and `char.ToLowerInvariant` help."
+  },
+  {
+    "id": "w1-two-sum",
+    "week": 1,
+    "title": "Two Sum",
+    "lessonId": "w1-arrays-strings",
+    "difficulty": "medium",
+    "file": "coding/Exercises/Week01/TwoSum.cs",
+    "testFilter": "Week01.TwoSumTests",
+    "description": "The most famous interview question. Write `TwoSum.Find(int[] nums, int target)` that returns the **indices** `[i, j]` (with `i < j`) of the two numbers that add up to `target`. Exactly one solution exists.\n\n- `nums = [2, 7, 11, 15], target = 9` \u2192 `[0, 1]`\n- `nums = [3, 2, 4], target = 6` \u2192 `[1, 2]`\n\n1. First write the simple **O(n\u00b2)** version with two loops.\n2. Then make it **O(n)** with a `Dictionary<int, int>` (value \u2192 index). The tests include a big array, so the O(n\u00b2) version may be slow."
+  },
+  {
+    "id": "w1-struct-class",
+    "week": 1,
+    "title": "struct vs class in practice",
+    "lessonId": "w1-class-struct",
+    "difficulty": "medium",
+    "file": "coding/Exercises/Week01/Wallets.cs",
+    "testFilter": "Week01.WalletsTests",
+    "description": "Two types are already declared: `struct MoneyStruct` and `class WalletClass`. Implement:\n\n1. `MoneyStruct.Add(decimal amount)` \u2192 adds to `Amount`.\n2. `WalletClass.Deposit(decimal amount)` \u2192 adds to `Balance`.\n3. `Demo.CopyStructThenChange()` \u2192 create a `MoneyStruct` with 10, copy it into a second variable, `Add(5)` on the **copy**, and return the **original** amount.\n4. `Demo.CopyClassThenChange()` \u2192 same with `WalletClass` (start at 10, copy, `Deposit(5)` on the copy) and return the **original** balance.\n\nBefore running the tests, **predict** both results and write them in a comment. Were you right? This is exactly the class vs struct interview question."
+  },
+  {
+    "id": "w2-bank-account",
+    "week": 2,
+    "title": "Bank account (encapsulation)",
+    "lessonId": "w2-encapsulation",
+    "difficulty": "easy",
+    "file": "coding/Exercises/Week02/BankAccount.cs",
+    "testFilter": "Week02.BankAccountTests",
+    "description": "Implement a `BankAccount` that **protects its own state**:\n\n- Constructor `BankAccount(string owner)`; `Owner` is read-only, `Balance` starts at 0 and **cannot be set from outside**.\n- `Deposit(decimal amount)`: amount must be > 0, else `ArgumentOutOfRangeException`.\n- `Withdraw(decimal amount)`: amount must be > 0 (`ArgumentOutOfRangeException`) and \u2264 Balance, else `InvalidOperationException(\"Insufficient funds\")`.\n- `History` returns the list of operations as read-only (`IReadOnlyList<decimal>`): deposits positive, withdrawals negative.\n\nThink: why is `public decimal Balance { get; set; }` a bad idea here?"
+  },
+  {
+    "id": "w2-shapes",
+    "week": 2,
+    "title": "Shapes (inheritance & polymorphism)",
+    "lessonId": "w2-inheritance",
+    "difficulty": "medium",
+    "file": "coding/Exercises/Week02/Shapes.cs",
+    "testFilter": "Week02.ShapesTests",
+    "description": "Create a small shape hierarchy:\n\n- `abstract class Shape` with `public abstract double Area();` and a `virtual string Describe()` returning `\"Shape with area X\"` (X rounded to 2 decimals, e.g. `\"Shape with area 12.57\"`).\n- `Circle(double radius)`, `Rectangle(double width, double height)`, `Square(double side)` (**Square inherits from Rectangle**).\n- `Circle` **overrides** `Describe()` \u2192 `\"Circle r=2\"`.\n- `ShapeTools.TotalArea(IEnumerable<Shape> shapes)` sums all areas \u2014 this is **polymorphism**: it doesn't know which shapes it gets.\n- Invalid sizes (\u2264 0) throw `ArgumentOutOfRangeException`."
+  },
+  {
+    "id": "w2-notifier",
+    "week": 2,
+    "title": "Notifications (interfaces)",
+    "lessonId": "w2-interfaces",
+    "difficulty": "medium",
+    "file": "coding/Exercises/Week02/Notifications.cs",
+    "testFilter": "Week02.NotificationsTests",
+    "description": "Program **to an interface**, not an implementation:\n\n- `INotifier` with `string Channel { get; }` and `bool Send(string to, string message)`.\n- `EmailNotifier` (`Channel = \"email\"`) and `SmsNotifier` (`Channel = \"sms\"`): `Send` returns `true`, but **SMS fails** (returns `false`) if the message is longer than 160 characters.\n- `NotificationService(IEnumerable<INotifier> notifiers)` with `int NotifyAll(string to, string message)` that sends through **every** notifier and returns how many succeeded.\n\nThe tests also use a **fake notifier**. This is why interfaces make code testable, and it leads directly to dependency injection in week 4."
+  }
+]

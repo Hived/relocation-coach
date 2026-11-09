@@ -1,0 +1,6 @@
+{
+  // Practice mode: no AI autocomplete while relearning (Claude Code extension still works when you ask it).
+  "github.copilot.enable": { "*": false },
+  "editor.inlineSuggest.enabled": false,
+  "dotnet.defaultSolution": "coding/Coding.sln"
+}

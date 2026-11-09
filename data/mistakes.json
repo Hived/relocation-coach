@@ -1,0 +1,98 @@
+[
+  {
+    "id": "m_levelcheck1",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w3-linq",
+    "question": "What is the difference between IEnumerable<T> and List<T>?",
+    "myAnswer": "IEnumerable we use it in LINQ, List in any collection",
+    "correction": "IEnumerable<T> is an interface: a sequence you can loop over (often lazy). List<T> is a concrete in-memory collection that implements IEnumerable<T> (and IList<T>).",
+    "rule": {
+      "en": "IEnumerable<T> = 'something you can foreach over'; List<T> = a real list in memory that IS an IEnumerable<T>.",
+      "darija": "IEnumerable<T> ghir interface: 7aja t9der dir 3liha foreach. List<T> hiya list 7a9i9iya f l-memoire, w hiya kat-implementi IEnumerable<T>."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "id": "m_levelcheck2",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w4-async",
+    "question": "What does async/await do?",
+    "myAnswer": "Executes a function in parallel, it runs in the background so it doesn't block",
+    "correction": "async/await is NOT parallelism. It lets code wait for I/O (database, HTTP) without blocking the thread; the thread is free to do other work until the result comes back.",
+    "rule": {
+      "en": "await = 'wait without blocking'. Parallel = several things at the same time (Task.WhenAll, Parallel.For).",
+      "darija": "async/await machi parallel. Kay-khlli l-code ystenna (DB, HTTP) bla ma yblokki l-thread; l-thread kay-b9a 7orr ydir khdma okhra 7tta ywsel r-result."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "id": "m_levelcheck3",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w4-async",
+    "question": "What is wrong with calling .Result on a Task?",
+    "myAnswer": "I don't know",
+    "correction": ".Result blocks the current thread until the Task finishes. It wastes threads and can cause deadlocks (e.g. with a UI or old ASP.NET synchronization context). Use await instead.",
+    "rule": {
+      "en": "Never block on async code: await it.",
+      "darija": ".Result kat-blokki l-thread 7tta tsali l-Task, w t9der tdir deadlock. Dima sta3mel await."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "id": "m_levelcheck4",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w1-class-struct",
+    "question": "What is the difference between a class and a struct?",
+    "myAnswer": "I don't know",
+    "correction": "class = reference type: copying the variable copies the reference, both point to the same object. struct = value type: copying makes an independent copy.",
+    "rule": {
+      "en": "Copy a class → same object. Copy a struct → separate copy.",
+      "darija": "Ila nsakhti class, b-juj kay-chiro l nafs l-object. Ila nsakhti struct, kat-welli 3endek nuskha mosta9illa."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "id": "m_levelcheck5",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w4-di",
+    "question": "Explain dependency injection and the Transient / Scoped / Singleton lifetimes.",
+    "myAnswer": "It makes low coupling but I don't really know what it does in code",
+    "correction": "A class receives what it needs (usually interfaces) through its constructor instead of creating them with new. The DI container creates and injects them. Transient = new instance every time; Scoped = one per HTTP request; Singleton = one for the whole app.",
+    "rule": {
+      "en": "Don't 'new' your dependencies — ask for them in the constructor.",
+      "darija": "Class matdirch new l dependencies dyalha; kat-tlebhom f constructor (ghaliban interfaces), w l-container howa li kay-3tihom lha. Transient = jdida kol mra, Scoped = wa7da f kol request, Singleton = wa7da l l-app kamla."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  },
+  {
+    "id": "m_levelcheck6",
+    "date": "2026-11-09",
+    "area": "coding",
+    "topic": "w1-arrays-strings",
+    "question": "Write Two Sum: return the indices of the two numbers that add up to target.",
+    "myAnswer": "(I couldn't write the function)",
+    "correction": "Loop once with a Dictionary<int,int> (value → index): for each number, if (target - number) is already in the dictionary, return both indices; otherwise store the number. O(n).",
+    "rule": {
+      "en": "Hash map lookups turn O(n²) into O(n).",
+      "darija": "Dir boucle wa7da m3a Dictionary (valeur → index): kol ra9m, chof wach (target - ra9m) deja kayn; ila kayn rje3 l-indices, ila la khzen ra9m. O(n)."
+    },
+    "streakCorrect": 0,
+    "status": "open",
+    "history": []
+  }
+]

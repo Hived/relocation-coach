@@ -1,0 +1,18 @@
+# Build output / dependencies
+node_modules/
+coding/**/bin/
+coding/**/obj/
+.vs/
+.vscode/*
+!.vscode/settings.json
+*.user
+__pycache__/
+.venv/
+
+# App runtime scratch (test runs are regenerated)
+data/runs/
+data/*.tmp
+
+# OS junk
+.DS_Store
+Thumbs.db

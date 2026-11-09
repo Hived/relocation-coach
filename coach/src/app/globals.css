@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b0f1a;
+  --color-panel: #121829;
+  --color-panel-2: #182038;
+  --color-line: #263152;
+  --color-muted: #8b96b8;
+  --color-text: #e6eaf6;
+  --color-accent: #8b5cf6;
+  --color-accent-2: #22d3ee;
+  --color-good: #34d399;
+  --color-bad: #fb7185;
+  --color-warn: #fbbf24;
+  --font-sans: "Segoe UI", "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+}
+
+body {
+  background-image:
+    radial-gradient(900px 500px at 10% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(800px 500px at 110% 10%, rgba(34, 211, 238, 0.12), transparent 60%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(24, 32, 56, 0.85), rgba(18, 24, 41, 0.85));
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(8px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.prose-coach {
+  line-height: 1.65;
+}
+.prose-coach h1 { font-size: 1.4rem; font-weight: 700; margin: 0.6em 0 0.4em; }
+.prose-coach h2 { font-size: 1.15rem; font-weight: 700; margin: 1em 0 0.4em; }
+.prose-coach h3 { font-size: 1rem; font-weight: 600; margin: 0.8em 0 0.3em; }
+.prose-coach p { margin: 0.5em 0; }
+.prose-coach ul { list-style: disc; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-coach ol { list-style: decimal; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-coach code { background: #0b1022; border: 1px solid var(--color-line); border-radius: 6px; padding: 0.05em 0.35em; font-size: 0.88em; }
+.prose-coach pre { background: #0b1022; border: 1px solid var(--color-line); border-radius: 10px; padding: 0.9em; overflow-x: auto; margin: 0.6em 0; }
+.prose-coach pre code { border: 0; padding: 0; background: transparent; }
+.prose-coach a { color: var(--color-accent-2); text-decoration: underline; }
+.prose-coach blockquote { border-left: 3px solid var(--color-accent); padding-left: 0.8em; color: var(--color-muted); }
+.prose-coach table { border-collapse: collapse; margin: 0.6em 0; }
+.prose-coach th, .prose-coach td { border: 1px solid var(--color-line); padding: 0.3em 0.6em; }
+
+.flip-card { perspective: 1200px; }
+.flip-inner { transform-style: preserve-3d; }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #263152; border-radius: 8px; }
